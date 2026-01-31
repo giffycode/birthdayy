@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fdf6f9;
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #d6336c;
+    }
+    .puzzle {
+      font-size: 28px;
+      margin: 20px 0;
+      letter-spacing: 8px;
+      color: #333;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 15px;
+      border: 2px solid #d6336c;
+      border-radius: 5px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background: #d6336c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    button:hover {
+      background: #a61e4d;
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Birthday Month Puzzle 💖</h1>
+  <p class="puzzle">V E O L U Y M Y U A N</p>
+  <p>Rearrange these letters to find the secret phrase!</p>
+
+  <form action="letter.html" onsubmit="return checkAnswer()">
+    <input type="text" id="answer" placeholder="Type your answer here">
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    function checkAnswer() {
+      const input = document.getElementById("answer").value.trim().toUpperCase();
+      if (input === "LOVE YOU MY ANU") {
+        return true; // goes to letter.html
+      } else {
+        alert("Not quite! Try again ❤️");
+        return false; // stays here
+      }
+    }
+  </script>
+</body>
+</html>
